@@ -30,7 +30,8 @@
    }
   </style>
   </head>
-  <body> 
+  <body>
+  <div id="htmlcontent"> 
   <h1> RESUME </h1>
   <h3>DHANASHREE S</h3>
   <p><b>College Mail id :</b>dhanashrees.cs21@kascsathy.ac.in</p>
@@ -88,4 +89,20 @@
   <h3>DECLARATION</h3>
   <p id="declaration">I hereby declare that all the information given above is true and correct to the best of my knowledge.</p>
   </body>
+  </div>
+  <center>
+  <button onclick="printDiv('htmlcontent')">Print / Save Pdf</button>
+  </center>
+  <script type="text/javascript">
+
+      function printDiv(div_id) 
+    	{
+    	  var divToPrint=document.getElementById(div_id);
+    	  var newWin=window.open('','Print-Window');
+    	  newWin.document.open();
+    	  newWin.document.write('<html><body onload="window.print()">'+divToPrint.innerHTML+'</body></html>');
+    	  newWin.document.close();
+    	  setTimeout(function() { newWin.close();},10);
+    	}
+  </script>
 </html>
